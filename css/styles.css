@@ -1,0 +1,1186 @@
+/* ==========================================================================
+   DIGITAL MUSEUM DESIGN SYSTEM
+   «Спандияр Көбеев – ұлт ағартушысының өмір жолы»
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-dark: #12100e;
+  --bg-card: rgba(26, 22, 19, 0.88);
+  --bg-modal: #181512;
+  
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  
+  --text-main: #f5f2ec;
+  --text-muted: #b5aba0;
+  --text-dark: #231e1a;
+  
+  --sand-accent: #e5d7c3;
+  --border-gold: rgba(212, 175, 55, 0.25);
+  
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Nunito', system-ui, -apple-system, sans-serif;
+  
+  /* Transitions */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.25s var(--ease-cinematic);
+  --transition-normal: 0.5s var(--ease-cinematic);
+  --transition-camera: 0.85s var(--ease-cinematic);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ==========================================================================
+   MINIMALIST MASTER HEADER
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: linear-gradient(180deg, rgba(18, 16, 14, 0.92) 0%, rgba(18, 16, 14, 0.4) 70%, rgba(18, 16, 14, 0) 100%);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-emblem {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e6ca65, #99751e);
+  color: #1a1614;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px var(--gold-glow);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.brand-subtitle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.lang-btn {
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 16px;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.lang-btn.active {
+  background: var(--gold-primary);
+  color: #12100e;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Journey Action Button */
+.btn-journey {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #d4af37 0%, #a8841f 100%);
+  color: #12100e;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  border-radius: 24px;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.btn-journey:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #e6ca65 0%, #b89326 100%);
+}
+
+.btn-journey:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   INTERACTIVE WORLD VIEWPORT & LANDSCAPE
+   ========================================================================== */
+.world-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #080604;
+}
+
+.world-canvas {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  transform-origin: center center;
+  transition: transform var(--transition-camera);
+  will-change: transform;
+}
+
+/* Master Landscape Image */
+.landscape-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: contrast(1.08) brightness(0.96) saturate(1.1);
+}
+
+.landscape-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(10,8,6,0.6) 100%),
+              linear-gradient(180deg, rgba(14,11,8,0.5) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 78%, rgba(12,9,6,0.7) 100%);
+}
+
+/* ==========================================================================
+   INTEGRATED ORGANIC STEPPE ROAD SVG
+   ========================================================================== */
+.road-svg-integrated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   ORGANIC STATION NODES IN LANDSCAPE
+   ========================================================================== */
+.station-node {
+  position: absolute;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.1s ease;
+}
+
+.station-node:hover {
+  transform: translate(-50%, -56%) scale(1.14);
+  z-index: 50;
+}
+
+/* Brass & Gold Museum Medal Badge */
+.station-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #3a3026 0%, #1c1611 75%, #100d0a 100%);
+  border: 2px solid var(--gold-primary);
+  color: var(--gold-light);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.88), 0 0 16px var(--gold-glow);
+  transition: all var(--transition-fast);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.station-badge__pulse {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-primary);
+  opacity: 0.55;
+  animation: pulseAura 2.6s infinite ease-in-out;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.38); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.station-node.active .station-badge,
+.station-node:hover .station-badge {
+  background: radial-gradient(circle at 35% 30%, #f7e8b5 0%, #d4af37 60%, #9e7b1c 100%);
+  color: #12100e;
+  border-color: #ffffff;
+  box-shadow: 0 0 30px var(--gold-primary), 0 0 14px #ffffff, 0 8px 24px rgba(0,0,0,0.9);
+}
+
+/* Organic Station Tag - compact and beautiful, no overlapping */
+.station-tag {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: rgba(18, 14, 11, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  width: max-content;
+  max-width: 170px;
+  transition: all var(--transition-fast);
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.station-node:hover .station-tag,
+.station-node.active .station-tag {
+  border-color: var(--gold-primary);
+  background: rgba(26, 20, 16, 0.98);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.98), 0 0 20px var(--gold-glow);
+}
+
+.station-tag-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #ffffff;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.station-tag-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-top: 3px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   MUSEUM ARCHIVAL FULLSCREEN MODAL
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  background: rgba(10, 8, 6, 0.82);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  padding: 2rem;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: var(--bg-modal);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.15);
+  transform: scale(0.92) translateY(20px);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.active .modal-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Museum Modal Banner Header (Clean Historical Regal Style) */
+.modal-hero {
+  position: relative;
+  width: 100%;
+  padding: 2.2rem 2.4rem 1.6rem 2.4rem;
+  background: linear-gradient(135deg, rgba(32, 26, 21, 0.98) 0%, rgba(20, 16, 13, 0.98) 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-hero-overlay {
+  display: none;
+}
+
+/* ==========================================================================
+   MUSEUM ARCHIVAL PHOTO PRESENTATION & SHOWCASES
+   ========================================================================== */
+
+/* Single Hero Photo (Stations 1 & 2) */
+.single-photo-card {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.modal-photo-frame {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+  background: #110e0c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.modal-photo-frame.single-hero {
+  height: 360px;
+}
+
+.single-photo-card:hover .modal-photo-frame,
+.gallery-photo-card:hover .modal-photo-frame {
+  border-color: var(--gold-primary);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 175, 55, 0.25);
+  transform: translateY(-3px);
+}
+
+.modal-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  background: #110e0c;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.single-photo-card:hover .modal-photo-img,
+.gallery-photo-card:hover .modal-photo-img {
+  transform: scale(1.04);
+}
+
+/* Photo Caption Bar */
+.modal-photo-caption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--sand-accent);
+  line-height: 1.4;
+}
+
+.photo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.photo-badge.gold {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--gold-primary);
+  color: #ffffff;
+}
+
+/* Interactive Zoom Badge Overlay */
+.zoom-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 12px;
+  background: rgba(16, 12, 9, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.single-photo-card:hover .zoom-badge,
+.gallery-photo-card:hover .zoom-badge,
+.book-card:hover .zoom-badge,
+.document-showcase:hover .zoom-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Multi-photo Gallery Grid (Stations 3 & 4) */
+.modal-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.gallery-photo-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.gallery-photo-card .modal-photo-frame {
+  height: 250px;
+}
+
+.gallery-photo-card .modal-photo-frame.portrait-card {
+  height: 380px;
+}
+
+.modal-photo-img.contain-fit {
+  object-fit: contain;
+  background: #0d0a08;
+}
+
+.modal-photo-img.cover-fit {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Station 5: Special Books Showcase (Қалың мал & Орындалған арман) */
+.modal-books-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  width: 100%;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 1.4rem 1.2rem;
+  background: linear-gradient(150deg, rgba(32, 25, 19, 0.9) 0%, rgba(18, 14, 11, 0.96) 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.38);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85);
+  transition: all 0.35s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.book-cover-wrap {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle at center, #2e2319 0%, #120e0b 80%, #090705 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  overflow: hidden;
+  padding: 12px;
+}
+
+.book-cover-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 6px 10px 28px rgba(0, 0, 0, 0.95), 0 0 12px rgba(212, 175, 55, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.book-card:hover .book-cover-img {
+  transform: scale(1.05);
+}
+
+.book-card-info {
+  width: 100%;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.book-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+/* Station 6: Document Showcase (Шежіре Chart) */
+.document-showcase {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4rem;
+  background: linear-gradient(150deg, rgba(30, 24, 18, 0.88) 0%, rgba(16, 12, 9, 0.95) 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.38);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85);
+  transition: all 0.35s ease;
+}
+
+.document-showcase:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.document-frame {
+  width: 100%;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #0d0a08;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.document-img {
+  max-height: 480px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9);
+  transition: transform 0.4s ease;
+}
+
+.document-showcase:hover .document-img {
+  transform: scale(1.03);
+}
+
+.document-caption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--sand-accent);
+  text-align: center;
+}
+
+/* ==========================================================================
+   MUSEUM ARCHIVAL VIDEO PLAYER SECTION
+   ========================================================================== */
+.modal-video-section {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1.6rem;
+  background: linear-gradient(150deg, rgba(30, 24, 18, 0.9) 0%, rgba(16, 12, 9, 0.98) 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.38);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.video-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.modal-video-container {
+  width: 100%;
+  max-height: 460px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95), 0 0 20px rgba(212, 175, 55, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video-player {
+  width: 100%;
+  max-height: 450px;
+  display: block;
+  outline: none;
+  background: #000000;
+}
+
+.video-section-desc {
+  font-size: 0.92rem;
+  color: var(--sand-accent);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   HIGH-RESOLUTION LIGHTBOX FULLSCREEN VIEWER
+   ========================================================================== */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  background: rgba(6, 4, 3, 0.94);
+  backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem;
+}
+
+.lightbox-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-container {
+  position: relative;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-backdrop.active .lightbox-container {
+  transform: scale(1);
+}
+
+.lightbox-frame {
+  max-width: 90vw;
+  max-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0a08;
+  border-radius: 16px;
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.98), 0 0 45px rgba(212, 175, 55, 0.3);
+  overflow: hidden;
+  padding: 8px;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(30, 24, 18, 0.9);
+  border: 1.5px solid var(--gold-primary);
+  color: #ffffff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close-btn:hover {
+  background: var(--gold-primary);
+  color: #12100e;
+  transform: rotate(90deg) scale(1.08);
+}
+
+.lightbox-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.lightbox-badge {
+  padding: 4px 12px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.lightbox-caption {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.photo-placeholder-icon {
+  font-size: 2.4rem;
+  opacity: 0.85;
+}
+
+.photo-placeholder-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.photo-placeholder-hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--gold-primary);
+  color: #12100e;
+  transform: rotate(90deg);
+}
+
+.modal-hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+.modal-period-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.75rem;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-top: 6px;
+}
+
+/* Modal Scrollable Body */
+.modal-body {
+  padding: 2.2rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Archival Content Styling */
+.archive-badge-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.archive-heading {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.archive-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--sand-accent);
+  margin-bottom: 1rem;
+}
+
+.archive-fact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.fact-card {
+  background: rgba(34, 28, 24, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.fact-card__icon {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.fact-card__title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--gold-light);
+}
+
+.fact-card__desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.archive-quote {
+  border-left: 3px solid var(--gold-primary);
+  padding-left: 1.2rem;
+  margin: 1.2rem 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.archive-quote cite {
+  display: block;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--gold-light);
+  margin-top: 6px;
+}
+
+/* Next station button */
+.btn-inspect {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.04) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 14px;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+.btn-inspect:hover {
+  background: linear-gradient(135deg, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0.1) 100%);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+.btn-inspect .arrow { font-size: 1.1rem; }
+
+/* ==========================================================================
+   SHEZHIRE (GENEALOGY TREE) STYLING FOR STATION 6
+   ========================================================================== */
+.shezhire-tree {
+  margin-top: 1.5rem;
+  background: rgba(26, 22, 19, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.shezhire-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tree-node {
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgba(38, 30, 25, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.tree-node.main {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(38, 30, 25, 0.9) 100%);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+.node-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.node-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.tree-line {
+  width: 2px;
+  height: 16px;
+  background: var(--gold-primary);
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+    height: 66px;
+  }
+  
+  .brand-title {
+    font-size: 1.05rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.62rem;
+  }
+  
+  .btn-journey {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+  }
+
+  .modal-card {
+    max-height: 95vh;
+  }
+  
+  .modal-hero {
+    height: auto;
+    padding: 1.4rem 1.2rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-photo-frame.single-hero {
+    height: 220px;
+  }
+
+  .gallery-photo-card .modal-photo-frame {
+    height: 200px;
+  }
+
+  .book-cover-wrap {
+    height: 280px;
+  }
+
+  .document-frame {
+    max-height: 380px;
+  }
+
+  .modal-gallery-grid,
+  .modal-books-showcase {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .lightbox-backdrop {
+    padding: 1rem;
+  }
+
+  .lightbox-frame {
+    max-width: 96vw;
+    max-height: 70vh;
+  }
+
+  .lightbox-close-btn {
+    top: -42px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.6rem;
+  }
+}
