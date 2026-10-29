@@ -304,10 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
         : (st.images ? st.images.map(src => ({ src, captionKaz: title, captionRu: title, type: 'landscape' }))
         : (st.image ? [{ src: st.image, captionKaz: title, captionRu: title, type: 'landscape' }] : []));
 
-      if (st.id === 4 && photoList.length >= 2) {
-        // Station 4: Special Showcase for Books (Қалың мал & Орындалған арман)
+      if (st.id === 4 && photoList.length >= 1) {
+        // Station 4: Special Showcase for Books
         photoHtml = `
-          <div class="modal-books-showcase">
+          <div class="modal-books-showcase ${photoList.length === 1 ? 'single-book' : ''}">
             ${photoList.map(p => {
               const cap = currentLang === 'kz' ? p.captionKaz : p.captionRu;
               const safeCap = cap.replace(/"/g, '&quot;').replace(/'/g, '&#39;');

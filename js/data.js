@@ -352,15 +352,9 @@ const MUSEUM_STATIONS = [
     subtitleRu: "Роман «Калым» и переводы басен",
     period: "1910 — 1951",
     badgeLabel: "4. Әдебиет",
-    image: "assets/station5_kalyng_mal.jpg",
-    images: ["assets/station5_kalyng_mal.jpg", "assets/station5_oryndalghan.jpg"],
+    image: "assets/station5_oryndalghan.jpg",
+    images: ["assets/station5_oryndalghan.jpg"],
     photoItems: [
-      {
-        src: "assets/station5_kalyng_mal.jpg",
-        captionKaz: "«Қалың мал» романы (1913 ж.) — қазақ әдебиетіндегі тұңғыш романдардың бірі",
-        captionRu: "Роман «Калым» (1913 г.) — один из первых казахских романов",
-        type: "book"
-      },
       {
         src: "assets/station5_oryndalghan.jpg",
         captionKaz: "«Орындалған арман» мемуарлық романы (1951 ж.)",

@@ -586,6 +586,13 @@ body.modal-open .world-canvas {
   width: 100%;
 }
 
+.modal-books-showcase.single-book {
+  display: flex;
+  justify-content: center;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
 .book-card {
   display: flex;
   flex-direction: column;
