@@ -5,6 +5,8 @@ env/
 
 # Other Projects / Datasets
 cv_project/
+run_predict_test.bat
+run_webcam_demo.bat
 
 # IDE & Editors
 .vscode/

@@ -29,18 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Road Curve Key Points in Viewport Percentages matching landmarks in forest landscape
   const naturalRoadControlPoints = [
     { x: 7, y: 44 },
-    { x: 14, y: 38 }, // Station 1: Yurts on hill (safe from left edge!)
+    { x: 14, y: 38 }, // Station 1: Ақсуат ауылы (Балалық шақ)
     { x: 28, y: 44 },
-    { x: 44, y: 53 }, // Station 2: Wooden 2-story school
-    { x: 56, y: 64 }, // Station 3: School crossroads & fence
-    { x: 67, y: 72 },
-    { x: 78, y: 78 }, // Station 4: Foreground table with books & awards
-    { x: 70, y: 62 },
-    { x: 74, y: 56 }, // Station 5: Forest road & wooden bridge
-    { x: 80, y: 54 },
-    { x: 85, y: 52 }, // Station 6: Spandiyar Kubeyev's family homestead
-    { x: 89, y: 49 },
-    { x: 93, y: 47 }, // Station 7: Shezhire & ancestral riverbank yurts
+    { x: 44, y: 53 }, // Station 2: Ы. Алтынсарин мектебі және педагогикалық жолы
+    { x: 56, y: 64 },
+    { x: 68, y: 72 }, // Station 3: Білімге қосқан үлесі (Ақсуат мектебі)
+    { x: 73, y: 63 },
+    { x: 78, y: 56 }, // Station 4: Әдебиетке қосқан үлесі («Қалың мал»)
+    { x: 84, y: 52 },
+    { x: 91, y: 48 }, // Station 5: Отбасы және шежіре
     { x: 97, y: 49 }
   ];
 
@@ -307,8 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
         : (st.images ? st.images.map(src => ({ src, captionKaz: title, captionRu: title, type: 'landscape' }))
         : (st.image ? [{ src: st.image, captionKaz: title, captionRu: title, type: 'landscape' }] : []));
 
-      if (st.id === 5 && photoList.length >= 2) {
-        // Station 5: Special Showcase for Books (Қалың мал & Орындалған арман)
+      if (st.id === 4 && photoList.length >= 2) {
+        // Station 4: Special Showcase for Books (Қалың мал & Орындалған арман)
         photoHtml = `
           <div class="modal-books-showcase">
             ${photoList.map(p => {
@@ -329,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }).join('')}
           </div>
         `;
-      } else if ((st.id === 6 || st.id === 7) && photoList.length >= 2) {
-        // Station 6 (Отбасы) & Station 7 (Шежіре) Special Grid Showcase
+      } else if (st.id === 5 && photoList.length >= 2) {
+        // Station 5: Отбасы мен Шежіре Special Grid Showcase
         photoHtml = `
           <div class="modal-gallery-grid station6-grid">
             ${photoList.map(p => {
@@ -353,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }).join('')}
           </div>
         `;
-      } else if ((st.id === 6 || st.id === 7) && photoList.length === 1) {
+      } else if (st.id === 5 && photoList.length === 1) {
         // Document showcase fallback
         const p = photoList[0];
         const cap = currentLang === 'kz' ? p.captionKaz : p.captionRu;

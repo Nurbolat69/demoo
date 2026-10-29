@@ -1,6 +1,7 @@
 /**
  * DIGITAL MUSEUM DATASET
  * «Спандияр Көбеев – ұлт ағартушысының өмір жолы»
+ * 5 тарихи станция
  */
 
 const MUSEUM_STATIONS = [
@@ -106,114 +107,42 @@ const MUSEUM_STATIONS = [
     posX: 44,
     posY: 53,
     pathSegmentIndex: 2,
-    titleKaz: "Ы. Алтынсарин мектебі",
-    titleRu: "Школа им. И. Алтынсарина",
-    subtitleKaz: "Торғайдағы 2 кластық орыс-қазақ мектебі",
-    subtitleRu: "2-классное русско-казахское училище",
-    period: "1892 — 1895",
-    badgeLabel: "2. Ы. Алтынсарин мектебі",
+    titleKaz: "Ы. Алтынсарин мектебі және педагогикалық жолы",
+    titleRu: "Школа им. И. Алтынсарина и педагогическое наследие",
+    subtitleKaz: "Торғай училищесі, мұғалімдік курстар және ұстаздық миссия",
+    subtitleRu: "Тургайское училище, учительские курсы и призвание",
+    period: "1892 — 1901",
+    badgeLabel: "2. Алтынсарин мектебі және педагогика",
     image: "assets/station2_school.jpg",
+    images: [
+      "assets/station2_school.jpg",
+      "assets/station3_pedagogy1.jpg",
+      "assets/station3_pedagogy2.jpg",
+      "assets/station3_pedagogy3.jpg"
+    ],
     photoItems: [
       {
         src: "assets/station2_school.jpg",
         captionKaz: "Ыбырай Алтынсарин негізін қалаған екі сыныптық орыс-қазақ мектебі",
         captionRu: "Двухклассное русско-казахское училище, основанное Ибраем Алтынсариным",
+        badgeKaz: "🏫 Мектеп",
+        badgeRu: "🏫 Училище",
         type: "landscape"
-      }
-    ],
-    summaryKaz: "Ыбырай Алтынсарин негізін қалаған училищедегі білім алу кезеңі.",
-    summaryRu: "Обучение в училище, открытом великим Ибраем Алтынсариным.",
-    contentKaz: `
-      <div class="archive-section">
-        <div class="archive-badge-tag">1892–1895 жж. • Торғай өңірі</div>
-        <h3 class="archive-heading">Ыбырай мектебіндегі тәлім мен тәрбие</h3>
-        <p class="archive-text">
-          1892 жылы Спандияр Көбеев Торғайдағы 2 сыныптық орыс-қазақ училищесіне қабылданады. Бұл оқу орны ұлы ағартушы <strong>Ыбырай Алтынсариннің</strong> тікелей бастамасымен салынған болатын.
-        </p>
-        <p class="archive-text">
-          Мұнда ол орыс және әлем әдебиетінің озық үлгілерімен, педагогикалық әдіс-тәсілдермен терең танысып, болашақ ұстаздық жолының берік іргетасын қалайды.
-        </p>
-        
-        <div class="archive-fact-cards">
-          <div class="fact-card">
-            <div class="fact-card__icon">🏛️</div>
-            <div class="fact-card__title">Оқу орны</div>
-            <div class="fact-card__desc">Торғайдағы 2 сыныптық орыс-қазақ училищесі</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">📚</div>
-            <div class="fact-card__title">Оқу пәндері</div>
-            <div class="fact-card__desc">Ана тілі, орыс тілі, география, тарих, жаратылыстану</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">🎓</div>
-            <div class="fact-card__title">Жетекшілер</div>
-            <div class="fact-card__desc">Ыбырай Алтынсариннің шәкірттері мен озық педагогтар</div>
-          </div>
-        </div>
-
-        <blockquote class="archive-quote">
-          «Алтынсарин салған сара жол біздің өмірлік шамшырағымызға айналды...»
-          <cite>— Спандияр Көбеев</cite>
-        </blockquote>
-      </div>
-    `,
-    contentRu: `
-      <div class="archive-section">
-        <div class="archive-badge-tag">1892–1895 гг. • Тургайское училище</div>
-        <h3 class="archive-heading">Свет знаний в стенах школы Алтынсарина</h3>
-        <p class="archive-text">
-          В 1892 году Спандияр поступает в двухклассное русско-казахское училище в Тургае, основанное <strong>Ибраем Алтынсариным</strong>.
-        </p>
-        <p class="archive-text">
-          Именно здесь сформировалось мировоззрение будущего педагога и писателя. Он впитал идеи гуманизма, просвещения и бескорыстного служения своему народу.
-        </p>
-        
-        <div class="archive-fact-cards">
-          <div class="fact-card">
-            <div class="fact-card__icon">🏛️</div>
-            <div class="fact-card__title">Учебное заведение</div>
-            <div class="fact-card__desc">2-классное русско-казахское училище в Тургае</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">📚</div>
-            <div class="fact-card__title">Предметы</div>
-            <div class="fact-card__desc">Языки, мировая литература, математика, естествознание</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">🎓</div>
-            <div class="fact-card__title">Наставники</div>
-            <div class="fact-card__desc">Прямые последователи и соратники И. Алтынсарина</div>
-          </div>
-        </div>
-      </div>
-    `
-  },
-  {
-    id: 3,
-    number: "3",
-    posX: 56,
-    posY: 64,
-    pathSegmentIndex: 3,
-    titleKaz: "Педагогикалық үлес",
-    titleRu: "Педагогическое наследие",
-    subtitleKaz: "Мұғалімдік курстар және ұстаздық жол",
-    subtitleRu: "Учительские курсы и призвание",
-    period: "1895 — 1901",
-    badgeLabel: "3. Педагогика",
-    image: "assets/station3_pedagogy1.jpg",
-    images: ["assets/station3_pedagogy1.jpg", "assets/station3_pedagogy2.jpg", "assets/station3_pedagogy3.jpg"],
-    photoItems: [
+      },
       {
         src: "assets/station3_pedagogy1.jpg",
         captionKaz: "Спандияр Көбеев шәкірттері мен ауыл тұрғындарының ортасында",
         captionRu: "Спандияр Көбеев среди учеников и жителей аула",
+        badgeKaz: "👥 Ұстаз бен шәкірт",
+        badgeRu: "👥 Учитель и ученики",
         type: "landscape"
       },
       {
         src: "assets/station3_pedagogy2.jpg",
         captionKaz: "Ағартушының ұстаздық қызметі мен тарихи ұжым",
         captionRu: "Педагогическая деятельность просветителя и коллеги",
+        badgeKaz: "🏛️ Педагогикалық ұжым",
+        badgeRu: "🏛️ Педагогический коллектив",
         type: "landscape"
       },
       {
@@ -229,82 +158,92 @@ const MUSEUM_STATIONS = [
     videoTitleKaz: "Спандияр Көбеевтің педагогикалық мұрасы туралы сұхбат",
     videoTitleRu: "Интервью о педагогическом наследии Спандияра Кубеева",
     videoDescKaz: "Мектеп мұражайындағы ғылыми жетекші мен жас зерттеушінің бейнесұхбаты",
-    videoDescRu: "Интервью научного руководителя и юного исследователя в школьном музее",
-    summaryKaz: "Қостанайдағы педагогикалық курстарды бітіріп, ұстаздық қызметке кірісуі.",
-    summaryRu: "Окончание педагогических курсов и начало учительской деятельности.",
+    videoDescRu: "Видеоинтервью научного руководителя и юного исследователя в школьном музее",
+    summaryKaz: "Ыбырай Алтынсарин мектебіндегі тәлім, Қостанайдағы курстар мен халыққа қызмет ету миссиясы.",
+    summaryRu: "Обучение в училище И. Алтынсарина, педагогические курсы и становление народного просветителя.",
     contentKaz: `
       <div class="archive-section">
-        <div class="archive-badge-tag">1895–1901 жж. • Ұстаздық бастау</div>
-        <h3 class="archive-heading">Ағартушылық миссиясы мен жаңашыл ұстаздық</h3>
+        <div class="archive-badge-tag">1892–1901 жж. • Торғай және Қостанай өңірі</div>
+        <h3 class="archive-heading">Ыбырай мектебіндегі тәлім және ұстаздық бастау</h3>
         <p class="archive-text">
-          1895-1897 жылдары Қостанай қаласындағы мұғалімдер даярлайтын курсты үздік бітірген Спандияр Көбеев халыққа қызмет етуді өзінің басты борышы санады.
+          1892 жылы Спандияр Көбеев Торғайдағы 2 сыныптық орыс-қазақ училищесіне қабылданады. Бұл оқу орны ұлы ағартушы <strong>Ыбырай Алтынсариннің</strong> тікелей бастамасымен салынған болатын. Мұнда ол ана тілі, орыс тілі, дүниетану пәндерімен терең танысып, өмірлік мұратына берік негіз қалайды.
         </p>
         <p class="archive-text">
-          Ол әдістемелік жаңашылдықтарды енгізіп, балаларды ана тілінде оқытумен қатар орыс тілі мен дүниетанымдық пәндерді қатар меңгеруге баулыды.
+          1895–1897 жылдары Қостанай қаласындағы мұғалімдер даярлайтын курсты үздік бітіріп, бастауыш мектеп мұғалімі куәлігін алды. Ол түсіндірмелі әдістемені енгізіп, кедей ауыл балалары мен қыз балаларды мектепке тартуға өлшеусіз үлес қосты.
         </p>
         
         <div class="archive-fact-cards">
           <div class="fact-card">
+            <div class="fact-card__icon">🏛️</div>
+            <div class="fact-card__title">Оқу орны</div>
+            <div class="fact-card__desc">Торғайдағы 2 сыныптық орыс-қазақ училищесі (1892–1895)</div>
+          </div>
+          <div class="fact-card">
             <div class="fact-card__icon">🎓</div>
             <div class="fact-card__title">Мұғалімдік куәлік</div>
-            <div class="fact-card__desc">1897 жылы Қостанайда мұғалім атағын алды</div>
+            <div class="fact-card__desc">1897 жылы Қостанайда педагог атағын үздік алды</div>
           </div>
           <div class="fact-card">
             <div class="fact-card__icon">📝</div>
-            <div class="fact-card__title">Әдістеме</div>
-            <div class="fact-card__desc">Түсіндірмелі оқыту, мысалдар арқылы тәрбиелеу</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">🌱</div>
-            <div class="fact-card__title">Ұстаным</div>
-            <div class="fact-card__desc">Қыз балалар мен кедей балаларын оқуға тарту</div>
+            <div class="fact-card__title">Әдістеме мен ұстаным</div>
+            <div class="fact-card__desc">Түсіндірмелі оқыту, қыз балаларды білімге баулу</div>
           </div>
         </div>
+
+        <blockquote class="archive-quote">
+          «Алтынсарин салған сара жол біздің өмірлік шамшырағымызға айналды...»
+          <cite>— Спандияр Көбеев</cite>
+        </blockquote>
       </div>
     `,
     contentRu: `
       <div class="archive-section">
-        <div class="archive-badge-tag">1895–1901 гг. • Педагогическое кредо</div>
-        <h3 class="archive-heading">Миссия просветителя и инновации в обучении</h3>
+        <div class="archive-badge-tag">1892–1901 гг. • Тургай и Костанай</div>
+        <h3 class="archive-heading">Школа Алтынсарина и становление народного педагога</h3>
         <p class="archive-text">
-          Окончив педагогические курсы в Костанае, Спандияр Көбеев получил звание народного учителя и всю свою жизнь посвятил просвещению степи.
+          В 1892 году Спандияр поступил в двухклассное русско-казахское училище в Тургае, открытое великим просветителем <strong>Ибраем Алтынсариным</strong>. Именно здесь сформировалось его мировоззрение бескорыстного служения народу.
         </p>
         <p class="archive-text">
-          Он отстаивал идеи доступности образования для всех слоев населения, особенно для детей бедняков и девочек.
+          Окончив в 1897 году педагогические курсы в Костанае со званием учителя начальных классов, Спандияр Көбеев посвятил жизнь просвещению степи. Он отстаивал равенство в образовании, наглядные методы и доступ к грамоте для сельских детей и девочек.
         </p>
         
         <div class="archive-fact-cards">
           <div class="fact-card">
+            <div class="fact-card__icon">🏛️</div>
+            <div class="fact-card__title">Учебное заведение</div>
+            <div class="fact-card__desc">2-классное русско-казахское училище в Тургае (1892–1895)</div>
+          </div>
+          <div class="fact-card">
             <div class="fact-card__icon">🎓</div>
             <div class="fact-card__title">Диплом учителя</div>
-            <div class="fact-card__desc">1897 год — выпуск из педагогических классов</div>
+            <div class="fact-card__desc">1897 год — выпуск из педагогических классов в Костанае</div>
           </div>
           <div class="fact-card">
             <div class="fact-card__icon">📝</div>
-            <div class="fact-card__title">Методика</div>
-            <div class="fact-card__desc">Наглядное обучение, связь теории с жизнью степи</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">🌱</div>
-            <div class="fact-card__title">Принцип</div>
-            <div class="fact-card__desc">Равенство и гуманность в школьном воспитании</div>
+            <div class="fact-card__title">Педагогическое кредо</div>
+            <div class="fact-card__desc">Наглядное обучение, равный доступ к грамоте для всех</div>
           </div>
         </div>
+
+        <blockquote class="archive-quote">
+          «Свет, зажжённый Алтынсариным, стал путеводной звездой для целого поколения учителей степи...»
+          <cite>— Спандияр Көбеев</cite>
+        </blockquote>
       </div>
     `
   },
   {
-    id: 4,
-    number: "4",
-    posX: 78,
-    posY: 78,
-    pathSegmentIndex: 4,
+    id: 3,
+    number: "3",
+    posX: 68,
+    posY: 72,
+    pathSegmentIndex: 3,
     titleKaz: "Білімге қосқан үлесі",
     titleRu: "Вклад в образование",
     subtitleKaz: "Ақсуат мектебі және 40 жылдық ұстаздық еңбек",
     subtitleRu: "Аксуатская школа и 40 лет просвещения",
     period: "1901 — 1944",
-    badgeLabel: "4. Білімге үлесі",
+    badgeLabel: "3. Білімге үлесі",
     image: "assets/station4_school.jpg",
     images: ["assets/station4_school.jpg", "assets/station4_gramota.jpg", "assets/station4_medals_colleagues.jpg"],
     photoItems: [
@@ -402,17 +341,17 @@ const MUSEUM_STATIONS = [
     `
   },
   {
-    id: 5,
-    number: "5",
-    posX: 74,
+    id: 4,
+    number: "4",
+    posX: 78,
     posY: 56,
-    pathSegmentIndex: 5,
+    pathSegmentIndex: 4,
     titleKaz: "Әдебиетке қосқан үлесі",
     titleRu: "Литературное творчество",
     subtitleKaz: "«Қалың мал» романы және мысалдар",
     subtitleRu: "Роман «Калым» и переводы басен",
     period: "1910 — 1951",
-    badgeLabel: "5. Әдебиет",
+    badgeLabel: "4. Әдебиет",
     image: "assets/station5_kalyng_mal.jpg",
     images: ["assets/station5_kalyng_mal.jpg", "assets/station5_oryndalghan.jpg"],
     photoItems: [
@@ -432,8 +371,8 @@ const MUSEUM_STATIONS = [
     video: "assets/station5_video.mp4",
     videoTitleKaz: "Сұхбат Серікбай Оспанұлымен",
     videoTitleRu: "Интервью с Серикбаем Оспанулы",
-    videoDescKaz: "",
-    videoDescRu: "",
+    videoDescKaz: "Спандияр Көбеевтің әдеби мұрасы мен қаламгерлік еңбегі туралы ғылыми сұхбат",
+    videoDescRu: "Интервью о литературном наследии и писательском труде Спандияра Кубеева",
     summaryKaz: "Қазақ әдебиетіндегі тұңғыш романдардың бірі «Қалың мал» және Крылов мысалдарын аударуы.",
     summaryRu: "Создание одного из первых казахских романов «Калым» и переводы басен И. Крылова.",
     contentKaz: `
@@ -498,19 +437,24 @@ const MUSEUM_STATIONS = [
     `
   },
   {
-    id: 6,
-    number: "6",
-    posX: 85,
-    posY: 52,
-    pathSegmentIndex: 6,
-    titleKaz: "Спандияр Көбеевтің отбасы",
-    titleRu: "Семья Спандияра Кубеева",
-    subtitleKaz: "Өнегелі шаңырақ пен ұрпақтар",
-    subtitleRu: "Семейный очаг и потомки",
+    id: 5,
+    number: "5",
+    posX: 91,
+    posY: 48,
+    pathSegmentIndex: 5,
+    titleKaz: "Спандияр Көбеевтің отбасы және шежіресі",
+    titleRu: "Семья и родословная (Шежіре) Спандияра Кубеева",
+    subtitleKaz: "Өнегелі шаңырақ, Жеті ата және ұрпақтар сабақтастығы",
+    subtitleRu: "Семейный очаг, Жеті ата и мемориальный дом-музей",
     period: "1878 — 1956",
-    badgeLabel: "6. Отбасы",
+    badgeLabel: "5. Отбасы және шежіре",
     image: "assets/station6_family2.jpg",
-    images: ["assets/station6_family2.jpg", "assets/station6_family1.jpg"],
+    images: [
+      "assets/station6_family2.jpg",
+      "assets/station6_family1.jpg",
+      "assets/station6_shezhire.jpg",
+      "assets/station6_house.jpg"
+    ],
     photoItems: [
       {
         src: "assets/station6_family2.jpg",
@@ -527,95 +471,7 @@ const MUSEUM_STATIONS = [
         badgeKaz: "🏛️ Тарихи сурет",
         badgeRu: "🏛️ Историческое фото",
         type: "landscape"
-      }
-    ],
-    summaryKaz: "Спандияр мен Меруерт Көбеевтердің өнегелі шаңырағы, балалары мен ұрпақтары.",
-    summaryRu: "Семейный очаг Спандияра и Меруерт Көбеевых, воспитание детей и уважение в доме.",
-    video: "assets/station6_video.mp4",
-    videoTitleKaz: "Спандияр Көбеевтің отбасы туралы бейнематериал",
-    videoTitleRu: "Видеоматериал о семье Спандияра Кубеева",
-    videoDescKaz: "",
-    videoDescRu: "",
-    contentKaz: `
-      <div class="archive-section">
-        <div class="archive-badge-tag">Өнегелі шаңырақ • 1878–1956 жж.</div>
-        <h3 class="archive-heading">Спандияр Көбеевтің отбасы</h3>
-        <p class="archive-text">
-          Спандияр Көбеевтің жарының есімі — <strong>Меруерт</strong>. Спандияр мен Меруерт отбасында төрт бала тәрбиеленді. Олардың бір қызы — <strong>Рабиға</strong>, үш ұлы — <strong>Шәмел</strong>, <strong>Нәзір</strong> және <strong>Сәбит</strong> болды.
-        </p>
-        <p class="archive-text">
-          Көбеевтер отбасы өзара сыйластық пен берекені қадір тұтқан өнегелі шаңырақ болды.
-        </p>
-
-        <div class="archive-fact-cards">
-          <div class="fact-card">
-            <div class="fact-card__icon">💍</div>
-            <div class="fact-card__title">Жары</div>
-            <div class="fact-card__desc">Меруерт — аяулы ана, шаңырақтың берекесі</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">👧</div>
-            <div class="fact-card__title">Қызы</div>
-            <div class="fact-card__desc">Рабиға</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">👦</div>
-            <div class="fact-card__title">Ұлдары</div>
-            <div class="fact-card__desc">Шәмел, Нәзір, Сәбит</div>
-          </div>
-        </div>
-
-        <blockquote class="archive-quote">
-          «Отбасындағы береке мен өзара сыйластық — ұрпақ тәрбиесінің ең биік бастауы...»
-        </blockquote>
-      </div>
-    `,
-    contentRu: `
-      <div class="archive-section">
-        <div class="archive-badge-tag">Семейный очаг • 1878–1956 гг.</div>
-        <h3 class="archive-heading">Семья Спандияра Кубеева</h3>
-        <p class="archive-text">
-          Супругу Спандияра Көбеева звали <strong>Меруерт</strong>. В семье Спандияра и Меруерт воспитывались четверо детей. У них была одна дочь — <strong>Рабига</strong>, и трое сыновей — <strong>Шамель</strong>, <strong>Назир</strong> и <strong>Сабит</strong>.
-        </p>
-        <p class="archive-text">
-          Семья Көбеевых была образцовым шаныраком, где превыше всего ценились взаимное уважение, согласие и благополучие.
-        </p>
-
-        <div class="archive-fact-cards">
-          <div class="fact-card">
-            <div class="fact-card__icon">💍</div>
-            <div class="fact-card__title">Супруга</div>
-            <div class="fact-card__desc">Меруерт — хранительница домашнего очага</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">👧</div>
-            <div class="fact-card__title">Дочь</div>
-            <div class="fact-card__desc">Рабига</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-card__icon">👦</div>
-            <div class="fact-card__title">Сыновья</div>
-            <div class="fact-card__desc">Шамель, Назир, Сабит</div>
-          </div>
-        </div>
-      </div>
-    `
-  },
-  {
-    id: 7,
-    number: "7",
-    posX: 93,
-    posY: 47,
-    pathSegmentIndex: 7,
-    titleKaz: "Шежіре",
-    titleRu: "Шежіре",
-    subtitleKaz: "Жеті ата және ұрпақтар сабақтастығы",
-    subtitleRu: "Родословная и преемственность поколений",
-    period: "Тарихи мұра",
-    badgeLabel: "7. Шежіре",
-    image: "assets/station6_shezhire.jpg",
-    images: ["assets/station6_shezhire.jpg", "assets/station6_house.jpg"],
-    photoItems: [
+      },
       {
         src: "assets/station6_shezhire.jpg",
         captionKaz: "Спандияр Көбеевтің Жеті ата шежіре тармағы (Шақадан бастап)",
@@ -633,17 +489,35 @@ const MUSEUM_STATIONS = [
         type: "portrait"
       }
     ],
-    summaryKaz: "Спандияр Көбеевтің түп атасынан басталатын Жеті ата шежіресі мен тарихи мұрасы.",
-    summaryRu: "Родословное древо Спандияра Көбеева (Жеті ата) и мемориальный дом-музей в Аксуате.",
+    summaryKaz: "Спандияр мен Меруерт Көбеевтердің өнегелі шаңырағы, балалары мен Жеті ата шежіресі.",
+    summaryRu: "Семейный очаг Спандияра и Меруерт Көбеевых, дети, предки Жеті ата и дом-музей.",
+    video: "assets/station6_video.mp4",
+    videoTitleKaz: "Спандияр Көбеевтің отбасы туралы бейнематериал",
+    videoTitleRu: "Видеоматериал о семье Спандияра Кубеева",
+    videoDescKaz: "Спандияр Көбеевтің отбасылық құндылықтары мен естеліктері",
+    videoDescRu: "Семейные ценности и воспоминания о семье Спандияра Кубеева",
     contentKaz: `
       <div class="archive-section">
-        <div class="archive-badge-tag">Тарихи шежіре • Ата-баба тағылымы</div>
-        <h3 class="archive-heading">Спандияр Көбеевтің Жеті ата шежіресі</h3>
+        <div class="archive-badge-tag">Өнегелі шаңырақ • Тарихи шежіре • 1878–1956 жж.</div>
+        <h3 class="archive-heading">Спандияр Көбеевтің отбасы және ата-баба шежіресі</h3>
+        <p class="archive-text">
+          Спандияр Көбеевтің жарының есімі — <strong>Меруерт</strong>. Спандияр мен Меруерт отбасында төрт бала тәрбиеленді. Олардың бір қызы — <strong>Рабиға</strong>, үш ұлы — <strong>Шәмел</strong>, <strong>Нәзір</strong> және <strong>Сәбит</strong> болды. Көбеевтер отбасы өзара сыйластық пен берекені қадір тұтқан өнегелі шаңырақ болды.
+        </p>
         <p class="archive-text">
           Қазақ халқының ғасырлар бойғы салты бойынша әрбір азамат өзінің жеті атасын білуге міндетті болған. Төменде Спандияр Көбеевтің түп атасы <strong>Шақадан</strong> бастау алатын киелі шежіре тармағы ұсынылған.
         </p>
 
         <div class="archive-fact-cards">
+          <div class="fact-card">
+            <div class="fact-card__icon">💍</div>
+            <div class="fact-card__title">Жары</div>
+            <div class="fact-card__desc">Меруерт — шаңырақтың берекесі, аяулы ана</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-card__icon">👨‍👩‍👧‍👦</div>
+            <div class="fact-card__title">Балалары</div>
+            <div class="fact-card__desc">Қызы: Рабиға. Ұлдары: Шәмел, Нәзір, Сәбит</div>
+          </div>
           <div class="fact-card">
             <div class="fact-card__icon">📜</div>
             <div class="fact-card__title">Түп атасы</div>
@@ -695,17 +569,34 @@ const MUSEUM_STATIONS = [
             </div>
           </div>
         </div>
+
+        <blockquote class="archive-quote">
+          «Отбасындағы береке мен өзара сыйластық — ұрпақ тәрбиесінің ең биік бастауы...»
+        </blockquote>
       </div>
     `,
     contentRu: `
       <div class="archive-section">
-        <div class="archive-badge-tag">Историческая родословная • Преемственность</div>
-        <h3 class="archive-heading">Родословное древо (Жеті ата) Спандияра Кубеева</h3>
+        <div class="archive-badge-tag">Семейный очаг • Родословная • 1878–1956 гг.</div>
+        <h3 class="archive-heading">Семья Спандияра Кубеева и родословное древо (Шежіре)</h3>
         <p class="archive-text">
-          По древней традиции степи знание семи предков (Жеті ата) являлось долгом каждого казаха. Ниже приведено подлинное родословное древо Спандияра Көбеева от родоначальника Шака.
+          Супругу Спандияра Көбеева звали <strong>Меруерт</strong>. В их семье царили согласие и взаимное уважение. Они воспитали четверых детей: дочь <strong>Рабигу</strong> и троих сыновей — <strong>Шамеля</strong>, <strong>Назира</strong> и <strong>Сабита</strong>.
+        </p>
+        <p class="archive-text">
+          По древней традиции степи знание семи предков (Жеті ата) являлось священным долгом каждого казаха. Ниже представлено подлинное родословное древо Спандияра Көбеева от родоначальника <strong>Шака</strong>.
         </p>
 
         <div class="archive-fact-cards">
+          <div class="fact-card">
+            <div class="fact-card__icon">💍</div>
+            <div class="fact-card__title">Супруга</div>
+            <div class="fact-card__desc">Меруерт — хранительница домашнего очага</div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-card__icon">👨‍👩‍👧‍👦</div>
+            <div class="fact-card__title">Дети</div>
+            <div class="fact-card__desc">Дочь Рабига, сыновья Шамель, Назир, Сабит</div>
+          </div>
           <div class="fact-card">
             <div class="fact-card__icon">📜</div>
             <div class="fact-card__title">Родоначальник</div>
@@ -757,6 +648,10 @@ const MUSEUM_STATIONS = [
             </div>
           </div>
         </div>
+
+        <blockquote class="archive-quote">
+          «Согласие и благополучие в шаныраке — основа воспитания достойного поколения...»
+        </blockquote>
       </div>
     `
   }
